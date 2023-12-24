@@ -4,9 +4,7 @@ import {
   requestUserPermission,
   NotificationListener,
 } from './libs/PushNotificationManager';
-// Name:FirebaseAPNKey
-// Key ID:T53464V868
-// Services:Apple Push Notifications service (APNs)
+
 const App = () => {
   useEffect(() => {
     requestUserPermission();
