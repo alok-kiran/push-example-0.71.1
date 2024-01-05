@@ -37,14 +37,14 @@ export const NotificationListener = () => {
     .then(remoteMessage => {
       if (remoteMessage) {
         console.log([
-          'Notification caused app to open from quit state:getInitialNotification',
+          'Notification caused app to open from quit state:',
           remoteMessage.notification,
         ]);
       }
     });
 
   messaging().onMessage(async remotemessage => {
-    console.log(['remote message onMessage', JSON.stringify(remotemessage)]);
+    console.log(['remotemessage onMessage', remotemessage]);
   });
 
   messaging().onNotificationOpenedApp(remotemessage => {

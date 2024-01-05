@@ -371,6 +371,8 @@ PODS:
     - React-perflogger (= 0.71.1)
   - RNCAsyncStorage (1.21.0):
     - React-Core
+  - RNCPushNotificationIOS (1.11.0):
+    - React-Core
   - RNFBApp (18.7.3):
     - Firebase/CoreOnly (= 10.19.0)
     - React-Core
@@ -419,6 +421,7 @@ DEPENDENCIES:
   - React-runtimeexecutor (from `../node_modules/react-native/ReactCommon/runtimeexecutor`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - "RNCAsyncStorage (from `../node_modules/@react-native-async-storage/async-storage`)"
+  - "RNCPushNotificationIOS (from `../node_modules/@react-native-community/push-notification-ios`)"
   - "RNFBApp (from `../node_modules/@react-native-firebase/app`)"
   - "RNFBMessaging (from `../node_modules/@react-native-firebase/messaging`)"
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
@@ -504,6 +507,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon"
   RNCAsyncStorage:
     :path: "../node_modules/@react-native-async-storage/async-storage"
+  RNCPushNotificationIOS:
+    :path: "../node_modules/@react-native-community/push-notification-ios"
   RNFBApp:
     :path: "../node_modules/@react-native-firebase/app"
   RNFBMessaging:
@@ -556,10 +561,11 @@ SPEC CHECKSUMS:
   React-runtimeexecutor: 311feb67600774723fe10eb8801d3138cae9ad67
   ReactCommon: fa9f2604824fa93b3504e8c1cd2670fc58e1d2df
   RNCAsyncStorage: 618d03a5f52fbccb3d7010076bc54712844c18ef
+  RNCPushNotificationIOS: 64218f3c776c03d7408284a819b2abfda1834bc8
   RNFBApp: 5ee688b07ed0fa692a3a8fd07df6d6ae41e4c3a0
   RNFBMessaging: c839473d12cbe1b042b29898177033de4214e932
   Yoga: 921eb014669cf9c718ada68b08d362517d564e0c
 
-PODFILE CHECKSUM: 25a0c632d774820eb9edba4b52c27fb1806922d6
+PODFILE CHECKSUM: 2743798ca7140e3a1d80f21feb0d381ae309dc9b
 
 COCOAPODS: 1.14.3

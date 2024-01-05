@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.21.0",
+    "@react-native-community/push-notification-ios": "^1.11.0",
     "@react-native-firebase/app": "^18.7.3",
     "@react-native-firebase/messaging": "^18.7.3",
     "react": "18.2.0",

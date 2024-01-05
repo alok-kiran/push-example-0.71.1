@@ -57,4 +57,6 @@ end
 target 'NotificationServiceExtension' do
   use_frameworks! :linkage => :static
   pod 'Firebase/Messaging', '~> 10.19.0' # eg 6.31.0
+  pod 'GoogleUtilities', :modular_headers => true
+  pod 'FirebaseCore', :modular_headers => true
 end

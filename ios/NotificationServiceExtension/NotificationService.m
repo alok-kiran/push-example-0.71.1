@@ -1,10 +1,3 @@
-//
-//  NotificationService.m
-//  NotificationServiceExtension
-//
-//  Created by Alok Kiran on 24/12/2023.
-//
-
 #import "NotificationService.h"
 #import "FirebaseMessaging.h"
 
@@ -20,6 +13,19 @@
 - (void)didReceiveNotificationRequest:(UNNotificationRequest *)request withContentHandler:(void (^)(UNNotificationContent * _Nonnull))contentHandler {
     self.contentHandler = contentHandler;
     self.bestAttemptContent = [request.content mutableCopy];
+    
+    NSString *imageUrlString = request.content.userInfo[@"image"];
+    if (imageUrlString) {
+        NSURL *imageUrl = [NSURL URLWithString:imageUrlString];
+        
+        UNNotificationAttachment *imageAttachment = [UNNotificationAttachment attachmentWithIdentifier:@"imageAttachment" URL:imageUrl options:nil error:nil];
+        
+        if (imageAttachment) {
+            self.bestAttemptContent.attachments = @[imageAttachment];
+        }
+    }
+    
+    // Populate the notification content using Firebase Messaging extensionHelper
     [[FIRMessaging extensionHelper] populateNotificationContent:self.bestAttemptContent withContentHandler:contentHandler];
 }
 
