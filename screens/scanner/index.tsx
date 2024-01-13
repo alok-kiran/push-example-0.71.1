@@ -1,18 +1,28 @@
 import React, {useEffect} from 'react';
-import {StyleSheet, View, Alert} from 'react-native';
+import {StyleSheet, View, Alert, Linking} from 'react-native';
 import QRScanner from '../../components/QRCodeScanner';
 
 const ScannerScreen: React.FC = ({navigation: {goBack}}) => {
   const handleScan = (data: string) => {
     if (data) {
-      Alert.alert(data);
+      Alert.alert(
+        'Congratulations',
+        `You can open this link to identify yourself at the POS:\n ${data}`,
+        [
+          {text: 'Close', onPress: () => console.log('Close Pressed')}, // Close button
+          {
+            text: 'Open URL',
+            onPress: () => {
+              const urlToOpen = data;
+              Linking.openURL(urlToOpen);
+            },
+          },
+        ],
+        {cancelable: false},
+      );
       goBack();
     }
   };
-
-  useEffect(() => {
-    return () => {};
-  }, []);
 
   return (
     <View style={styles.container}>
