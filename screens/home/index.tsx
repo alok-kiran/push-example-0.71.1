@@ -3,7 +3,7 @@ import {StyleSheet, Text, View} from 'react-native';
 
 const HomeScreen = () => {
   return (
-    <View>
+    <View style={styles.container}>
       <Text style={styles.text}>
         Welcome to Simple QR code scanner Demo app
       </Text>
@@ -12,6 +12,11 @@ const HomeScreen = () => {
 };
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    marginHorizontal: 16,
+  },
   text: {
     color: 'black',
     fontSize: 24,

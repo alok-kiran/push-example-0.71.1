@@ -1,11 +1,18 @@
-import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import React, {useEffect} from 'react';
+import {StyleSheet, View, Alert} from 'react-native';
 import QRScanner from '../../components/QRCodeScanner';
 
-const ScannerScreen: React.FC = () => {
+const ScannerScreen: React.FC = ({navigation: {goBack}}) => {
   const handleScan = (data: string) => {
-    console.log(data);
+    if (data) {
+      Alert.alert(data);
+      goBack();
+    }
   };
+
+  useEffect(() => {
+    return () => {};
+  }, []);
 
   return (
     <View style={styles.container}>
