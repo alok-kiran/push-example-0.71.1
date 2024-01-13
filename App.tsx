@@ -1,9 +1,23 @@
 import React, {useEffect} from 'react';
-import {SafeAreaView, Text, View} from 'react-native';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {NavigationContainer} from '@react-navigation/native';
+
 import {
   requestUserPermission,
   NotificationListener,
 } from './libs/PushNotificationManager';
+import HomeScreen from './screens/home';
+import ScannerScreen from './screens/scanner';
+
+const Tab = createBottomTabNavigator();
+const Tabs = () => {
+  return (
+    <Tab.Navigator>
+      <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name="Scanner" component={ScannerScreen} />
+    </Tab.Navigator>
+  );
+};
 
 const App = () => {
   useEffect(() => {
@@ -13,11 +27,9 @@ const App = () => {
   }, []);
 
   return (
-    <SafeAreaView>
-      <View>
-        <Text style={{color: 'white'}}>Test</Text>
-      </View>
-    </SafeAreaView>
+    <NavigationContainer>
+      <Tabs />
+    </NavigationContainer>
   );
 };
 
